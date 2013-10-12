@@ -78,8 +78,12 @@ def end_game():
     print "\nDone! Analysing game performance..."
     perc = scoring.get_result(lines, result_lines)
     print_result(perc)
-    time.sleep(25)
+
+    print_funsies()
+    time.sleep(20)
+
     cancel_game()
+
     return
 
 def print_result(perc):
@@ -88,6 +92,34 @@ def print_result(perc):
 def init_song_timer(song_length):
     timer = thread.Timer(song_length, end_game)
     return timer
+
+
+def print_funsies():
+    print """
+    (._.)
+    <) )J
+    / \\
+    """
+    time.sleep(1)
+    print """
+    ( ._.)
+    \( (>
+    / \\
+    """
+    time.sleep(1)
+    print """
+    (._.)
+    <) )J
+    / \\
+    """
+    time.sleep(1)
+    print """
+    ( ._.)
+    \( (>
+    / \\
+
+    """
+
 
 
 if __name__ == "__main__":
