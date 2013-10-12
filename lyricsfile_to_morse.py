@@ -23,7 +23,8 @@ def first_word_to_morse(filename):
             list_morse.append(firstword_morse)
     return list_morse    
 
-filename = 'D:/py/morsecode_karaoke/lyrics.txt'
-this_list = first_word_to_morse(filename)
-print this_list
+
+#filename = 'D:/py/morsecode_karaoke/lyrics.txt'
+#this_list = first_word_to_morse(filename)
+#print this_list
 
