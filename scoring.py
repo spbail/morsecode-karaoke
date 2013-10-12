@@ -23,6 +23,8 @@ import numpy as np
 def get_result(list_corr, list_user):
     num_user = 0
     num_corr = 0
+    #print list_corr
+    #print list_user
     for (index,line_corr) in enumerate(list_corr):
         line_user = list_user[index]
 #        print line_corr
