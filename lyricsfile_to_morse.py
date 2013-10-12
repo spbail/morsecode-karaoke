@@ -24,7 +24,8 @@ def first_word_to_morse(filename):
     return list_morse    
 
 
-#filename = 'D:/py/morsecode_karaoke/lyrics.txt'
-#this_list = first_word_to_morse(filename)
-#print this_list
+if __name__ == "__main__":
+    filename = 'D:/py/morsecode_karaoke/lyrics.txt'
+    this_list = first_word_to_morse(filename)
+    print this_list
 
