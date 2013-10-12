@@ -47,7 +47,7 @@ def get_result(list_corr, list_user):
 #results = np.any(matches, axis=dim_min, out=None, keepdims=False)
 
         results = np.any(matches, axis=1, out=None, keepdims=False)
-        print results
+#        print results
         num_user += sum(results)
         num_corr += len(results)
 #print sum(results)
@@ -55,9 +55,16 @@ def get_result(list_corr, list_user):
     perc = float(num_user)/float(num_corr)
     return perc
     
-#import morse
-#list_corr = [' '.join(morse.string_to_morse('Berlin')),' '.join(morse.string_to_morse('Geek')),' '.join(morse.string_to_morse('ettes'))]
-#list_user = [' '.join(morse.string_to_morse('Berlon')),' '.join(morse.string_to_morse('Geek')),' '.join(morse.string_to_morse('ette'))]
-#perc = get_result(list_corr, list_user)
-#print perc
+def print_asciiart(perc):
+    if perc<0.25:
+        pass
+
+if __name__ == "__main__":
+    import morse
+    list_corr = [' '.join(morse.string_to_morse('Berlin')),' '.join(morse.string_to_morse('Geek')),' '.join(morse.string_to_morse('ettes'))]
+    list_user = [' '.join(morse.string_to_morse('Berlon')),' '.join(morse.string_to_morse('Geek')),' '.join(morse.string_to_morse('ette'))]
+    perc = get_result(list_corr, list_user)
+    print perc
+
+
 
