@@ -1,6 +1,6 @@
 import tty, sys
 
-height = 12 # at window size 52x13
+height = 11 # at window size 52x13
 
 slides = ['start', 'overview']
 

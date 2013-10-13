@@ -1,2 +1,7 @@
+========== WHO MADE IT ========== 
 
-Overview
+* Claudine Chen - code and ASCII art
+* Federica Teodori - sound engineering
+* Samantha Bail - code
+
+@ Berlin Geekettes Hackathon 2013
