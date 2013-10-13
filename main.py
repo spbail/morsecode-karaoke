@@ -1,7 +1,6 @@
 import threading as thread
 import sys
 import timed_input as tin
-import sound_player as player
 import subprocess
 import pygame
 import scoring
@@ -120,7 +119,7 @@ def print_funsies():
 
     """
 
-
+    
 
 if __name__ == "__main__":
     #do = subprocess.Popen(['python2.7-32', 'play_sound.py start'])
