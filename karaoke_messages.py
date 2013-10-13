@@ -64,7 +64,26 @@ def print_funsies():
      / \\
 
     """
+    time.sleep(1)
 
+    print """
+    (._.)
+    <) )J
+     / \\
+    """
+    time.sleep(1)
+    print """
+    ( ._.)
+    \( (>
+     / \\
+    """
+    time.sleep(1)
+
+    print """
+    (._.)
+    <) )J
+     / \\
+    """
 
 def print_welcome_old(iterations):
     import time

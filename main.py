@@ -78,7 +78,8 @@ def start_game(song_length):
     return
 
 def end_game():
-    print "\nDone! Analysing game performance..."
+    #print "\nDone! Analysing game performance..."
+    print "\n"
     perc = scoring.get_result(lines, result_lines) * 100.0
     #print_result(perc)
     scoring.print_score(user_name, perc)

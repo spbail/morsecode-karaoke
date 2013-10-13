@@ -61,12 +61,15 @@ def get_result(list_corr, list_user):
 def print_score(username, userscore):
     from pyfiglet import figlet_format
     import time
+    print "\n\n"
+    score_string = "{:10.1f}".format(userscore)
     # big, doom, larry3d,starwars,slant, small,speed,mini, standard; script
     print figlet_format('WELL DONE', font='straight')
     print figlet_format('{0}!'.format(username), font='straight')
     time.sleep(2)
-    print figlet_format('YOUR SCORE:'.format(userscore), font='straight')
-    print figlet_format('{0: >7} %!'.format(userscore), font='straight')
+    print "\n\n"
+    print figlet_format('YOUR SCORE:', font='straight')
+    print figlet_format('{:10.1f}%!'.format(userscore), font='straight')
     time.sleep(3)
     
     
