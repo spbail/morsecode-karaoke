@@ -10,6 +10,7 @@ import time
 
 current_line = ""
 lines = mor.first_word_to_morse('lyrics.txt')
+print lines
 lines_times = times.get_times()
 result_lines = []
 total_lines = len(lines)
