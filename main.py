@@ -7,6 +7,7 @@ import scoring
 import times
 import lyricsfile_to_morse as mor
 import time
+import karaoke_messages as km
 
 current_line = ""
 lines = mor.first_word_to_morse('lyrics.txt')
@@ -65,7 +66,7 @@ def start_game(song_length):
     song_timer.start()
 
     # don't do anything for lines_times[0] seconds
-    time.sleep(lines_times[0]-1)
+    time.sleep(lines_times[0]-3)
     print "\nMorse Code Karaoke is GO!!!\n"
 
     while line_index < total_lines and play_game == True:
@@ -122,7 +123,8 @@ def print_funsies():
 
 if __name__ == "__main__":
     #do = subprocess.Popen(['python2.7-32', 'play_sound.py start'])
-    print "\nWelcome to Morse Code Karaoke... GET READY!!!\n"
+    #print "\nWelcome to Morse Code Karaoke... GET READY!!!\n"
+    km.print_welcome()
 
     pygame.mixer.music.play()
 
