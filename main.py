@@ -102,7 +102,8 @@ def init_song_timer(song_length):
 
 def run_mck():
     global user_name
-    km.print_welcome(2)
+    print "\n\n\n\n\n\n\n\n"
+    km.print_welcome()
     user_name = raw_input("Enter your name: ")
     pygame.mixer.music.play()
     start_game(song_length)   

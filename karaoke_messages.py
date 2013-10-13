@@ -9,12 +9,13 @@ Created on Sat Oct 12 23:11:13 2013
 def print_welcome():
     from pyfiglet import figlet_format
     import time
-    # big, doom, larry3d,starwars,slant, small,speed,mini, standard; script
-    print figlet_format(' MORSE CODE ', font='mini')
-    print figlet_format('* KARAOKE *', font='mini')
-    time.sleep(2)
 
-    
+    # big, doom, larry3d,starwars,slant, small,speed,mini, standard; script
+    font = "straight"
+    print figlet_format(' MORSE CODE ', font=font)
+    print figlet_format('* KARAOKE *', font=font)
+    time.sleep(4)
+
 
 def print_message(mess_type):
     if mess_type == 'welcome':
@@ -38,6 +39,7 @@ result4
 
 
 def print_funsies():
+    import time
     print """
     (._.)
     <) )J
