@@ -86,6 +86,7 @@ result4
 
 
 def print_funsies():
+    import time
     print """
     (._.)
     <) )J
