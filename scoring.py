@@ -62,11 +62,15 @@ def print_asciiart(perc):
         pass
 
 if __name__ == "__main__":
-    import morse
-    list_corr = [' '.join(morse.string_to_morse('Berlin')),' '.join(morse.string_to_morse('Geek')),' '.join(morse.string_to_morse('ettes'))]
-    list_user = [' '.join(morse.string_to_morse('Berlon')),' '.join(morse.string_to_morse('Geek')),' '.join(morse.string_to_morse('ette'))]
+    #import morse
+    #list_corr = [' '.join(morse.string_to_morse('Berlin')),' '.join(morse.string_to_morse('Geek')),' '.join(morse.string_to_morse('ettes'))]
+    #list_user = [' '.join(morse.string_to_morse('Berlon')),' '.join(morse.string_to_morse('Geek')),' '.join(morse.string_to_morse('ette'))]
+    #perc = get_result(list_corr, list_user)
+    #print perc
+
+    list_corr = ['- .... .', '-.-- --- ..- .-.', '.-- .... .- -', '.. ..-.', '.-- . ...- .', '... ---']
+    list_user = ['- . .', '-.-- ..- .-.', '.--', '..', ' ', '... ---']
     perc = get_result(list_corr, list_user)
     print perc
-
 
 

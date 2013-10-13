@@ -10,7 +10,6 @@ import time
 
 current_line = ""
 lines = mor.first_word_to_morse('lyrics.txt')
-print lines
 lines_times = times.get_times()
 result_lines = []
 total_lines = len(lines)
@@ -43,10 +42,9 @@ def play_line(line):
         #print "current line: ", current_line
         result_lines.append(current_line)
         end_line()
-    except EOFError:
-        cancel_game()
-
     except KeyboardInterrupt:
+        cancel_game()
+    except EOFError:
         cancel_game()
 
 
@@ -76,7 +74,7 @@ def start_game(song_length):
 
 def end_game():
     print "\nDone! Analysing game performance..."
-    perc = scoring.get_result(lines, result_lines)
+    perc = scoring.get_result(lines, result_lines) * 100.0
     print_result(perc)
 
     print_funsies()
@@ -87,7 +85,7 @@ def end_game():
     return
 
 def print_result(perc):
-    print "Your result: %d per cent" % perc
+    print "Your result: %.1f%%" % perc
 
 def init_song_timer(song_length):
     timer = thread.Timer(song_length, end_game)
@@ -98,25 +96,25 @@ def print_funsies():
     print """
     (._.)
     <) )J
-    / \\
+     / \\
     """
     time.sleep(1)
     print """
     ( ._.)
     \( (>
-    / \\
+     / \\
     """
     time.sleep(1)
     print """
     (._.)
     <) )J
-    / \\
+     / \\
     """
     time.sleep(1)
     print """
     ( ._.)
     \( (>
-    / \\
+     / \\
 
     """
 
