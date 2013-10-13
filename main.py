@@ -12,6 +12,7 @@ import karaoke_messages as km
 current_line = ""
 lines = mor.first_word_to_morse('lyrics.txt')
 lines_times = times.get_times()
+lyrics = mor.get_lyrics()
 result_lines = []
 total_lines = len(lines)
 first_bleep = lines_times[0]
@@ -36,11 +37,13 @@ def play_line(line):
     global result_lines
     global lines_times
 
-    print "\n%d: %s"% (line_index+1, line)
+    print lyrics[line_index].rstrip('\n')
+    print ">>  %s"% (line)
     try: 
-        tin.input(">> ", get_line_time());
+        tin.input(">>  ", get_line_time());
         current_line = tin.get_line()
         #print "current line: ", current_line
+        print " "
         result_lines.append(current_line)
         end_line()
     except KeyboardInterrupt:
@@ -124,7 +127,7 @@ def print_funsies():
 if __name__ == "__main__":
     #do = subprocess.Popen(['python2.7-32', 'play_sound.py start'])
     #print "\nWelcome to Morse Code Karaoke... GET READY!!!\n"
-    km.print_welcome()
+    km.print_welcome(2)
 
     pygame.mixer.music.play()
 
