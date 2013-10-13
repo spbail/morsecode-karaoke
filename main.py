@@ -99,12 +99,7 @@ def init_song_timer(song_length):
 
 
 
-
-    
-
-if __name__ == "__main__":
-    #do = subprocess.Popen(['python2.7-32', 'play_sound.py start'])
-    #print "\nWelcome to Morse Code Karaoke... GET READY!!!\n"
+def run_mck():
     km.print_welcome(2)
 
     user_name = raw_input("Enter your name: ")
@@ -112,6 +107,12 @@ if __name__ == "__main__":
 
     pygame.mixer.music.play()
 
-    start_game(song_length)
+    start_game(song_length)   
+    
+
+if __name__ == "__main__":
+    #do = subprocess.Popen(['python2.7-32', 'play_sound.py start'])
+    #print "\nWelcome to Morse Code Karaoke... GET READY!!!\n"
+    run_mck()
     
 

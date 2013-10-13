@@ -1,0 +1,10 @@
+========== 2. WHO MADE IT ========== 
+
+* Claudine Chen @mingness
+  code and ASCII art
+* Federica Teodori @eotchi
+  sound engineering
+* Samantha Bail @spbail
+  code
+
+@ Berlin Geekettes Hackathon 2013

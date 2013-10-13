@@ -1,0 +1,9 @@
+========== 3. HOW DID WE DO IT ========== 
+
+* Python and NumPy
+* Morse (Python library)
+* stackoverflow
+* Figlet
+* Coffee (the beverage, not the script)
+
+http://github.com/spbail/morsecode-karaoke

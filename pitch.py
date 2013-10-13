@@ -1,8 +1,9 @@
 import tty, sys
+import main as game
 
 height = 11 # at window size 52x13
 
-slides = ['start', 'overview']
+slides = ['start', 'who', 'how', 'demo']
 
 def read_slide(title):
     slide = open(title)
@@ -47,4 +48,6 @@ if __name__ == "__main__":
             i= i-1
         elif k == 'q':
             run = False
+
+    game.run_mck()
 
