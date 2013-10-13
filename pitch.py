@@ -1,7 +1,7 @@
 import tty, sys
 import main as game
 
-height = 11 # at window size 52x13
+height = 12 # at window size 52x13
 
 slides = ['start', 'who', 'how', 'demo']
 

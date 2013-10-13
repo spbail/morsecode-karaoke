@@ -90,7 +90,8 @@ def end_game():
 
     return
 
-def print_result(perc):
+#def print_result(perc):
+
     #print "Your result: %.1f%%" % perc
 
 def init_song_timer(song_length):
