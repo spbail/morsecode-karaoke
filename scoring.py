@@ -60,19 +60,32 @@ def get_result(list_corr, list_user):
 
 def print_score(username, userscore):
     from pyfiglet import figlet_format
+    import time
     # big, doom, larry3d,starwars,slant, small,speed,mini, standard; script
-    print figlet_format('Well done', font='mini')
-    print figlet_format('{}:'.format(username), font='mini')
-    print figlet_format('Your score:'.format(userscore), font='mini')
-    print figlet_format('{}%!'.format(userscore), font='standard')
+    print figlet_format('WELL DONE', font='straight')
+    print figlet_format('{0}!'.format(username), font='straight')
+    time.sleep(2)
+    print figlet_format('YOUR SCORE:'.format(userscore), font='straight')
+    print figlet_format('{0: >7} %!'.format(userscore), font='straight')
+    time.sleep(3)
     
     
 def read_hiscore(filename):
-    pass
+    with open(filename) as f:
+        content = f.readlines()    
+    username = content[0]
+    userscore = content[1]
+    return {'name': username, 'score': userscore}
 
 
 def print_scoreboard():
-    pass
+    import os
+    file_hiscore = 'hiscore.txt'
+    if os.path.exists(file_hiscore):
+        hiscore = read_hiscore(file_hiscore)
+        
+    else:
+        open(filename, 'w').close() 
 
     
 def print_asciiart(perc):
