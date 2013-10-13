@@ -57,11 +57,21 @@ def get_result(list_corr, list_user):
     perc = float(num_user)/float(num_corr)
     return perc
     
+    
 def print_asciiart(perc):
-    if perc<0.25:
-        pass
+    import karaoke_messages as km
+    if perc<=0.25:
+        km.print_message('result1')
+    elif 0.25<perc and perc<=0.5:
+        km.print_message('result2')
+    elif 0.5<perc and perc<=0.75:
+        km.print_message('result3')
+    elif 0.75<perc:
+        km.print_message('result4')
+
 
 if __name__ == "__main__":
+
     #import morse
     #list_corr = [' '.join(morse.string_to_morse('Berlin')),' '.join(morse.string_to_morse('Geek')),' '.join(morse.string_to_morse('ettes'))]
     #list_user = [' '.join(morse.string_to_morse('Berlon')),' '.join(morse.string_to_morse('Geek')),' '.join(morse.string_to_morse('ette'))]
@@ -70,7 +80,13 @@ if __name__ == "__main__":
 
     list_corr = ['- .... .', '-.-- --- ..- .-.', '.-- .... .- -', '.. ..-.', '.-- . ...- .', '... ---']
     list_user = ['- . .', '-.-- ..- .-.', '.--', '..', ' ', '... ---']
-    perc = get_result(list_corr, list_user)
-    print perc
 
+    import morse
+    import karaoke_messages as km
+    km.print_message('welcome')    
+    #list_corr = [' '.join(morse.string_to_morse('Berlin')),' '.join(morse.string_to_morse('Geek')),' '.join(morse.string_to_morse('ettes'))]
+    #list_user = [' '.join(morse.string_to_morse('Berlon')),' '.join(morse.string_to_morse('Geek')),' '.join(morse.string_to_morse('ette'))]
+    #perc = get_result(list_corr, list_user)
+    #print perc
+    #print_asciiart(perc)
 
