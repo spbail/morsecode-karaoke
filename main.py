@@ -80,8 +80,8 @@ def start_game(song_length):
 def end_game():
     print "\nDone! Analysing game performance..."
     perc = scoring.get_result(lines, result_lines) * 100.0
-    print_result(perc)
-
+    #print_result(perc)
+    scoring.print_score(user_name, perc)
     km.print_funsies()
     
     time.sleep(25)
@@ -91,7 +91,7 @@ def end_game():
     return
 
 def print_result(perc):
-    print "Your result: %.1f%%" % perc
+    #print "Your result: %.1f%%" % perc
 
 def init_song_timer(song_length):
     timer = thread.Timer(song_length, end_game)
@@ -100,13 +100,10 @@ def init_song_timer(song_length):
 
 
 def run_mck():
+    global user_name
     km.print_welcome(2)
-
     user_name = raw_input("Enter your name: ")
-
-
     pygame.mixer.music.play()
-
     start_game(song_length)   
     
 
