@@ -69,7 +69,7 @@ def start_game(song_length):
     song_timer.start()
 
     # don't do anything for lines_times[0] seconds
-    time.sleep(lines_times[0]-3)
+    time.sleep(lines_times[0]-1)
     print "\nMorse Code Karaoke is GO!!!\n"
 
     while line_index < total_lines and play_game == True:
@@ -82,7 +82,8 @@ def end_game():
     print_result(perc)
 
     print_funsies()
-    time.sleep(20)
+    
+    time.sleep(25)
 
     cancel_game()
 
