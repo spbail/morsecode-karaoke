@@ -56,7 +56,24 @@ def get_result(list_corr, list_user):
 #print len(results)
     perc = float(num_user)/float(num_corr)
     return perc
+
+
+def print_score(username, userscore):
+    from pyfiglet import figlet_format
+    # big, doom, larry3d,starwars,slant, small,speed,mini, standard; script
+    print figlet_format('Well done', font='mini')
+    print figlet_format('{}:'.format(username), font='mini')
+    print figlet_format('Your score:'.format(userscore), font='mini')
+    print figlet_format('{}%!'.format(userscore), font='standard')
     
+    
+def read_hiscore(filename):
+    pass
+
+
+def print_scoreboard():
+    pass
+
     
 def print_asciiart(perc):
     import karaoke_messages as km
