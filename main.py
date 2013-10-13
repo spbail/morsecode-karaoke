@@ -24,6 +24,7 @@ song_timer = thread.Timer(0, None)
 play_game = True
 lyrics_file = "lyrics.txt"
 play_line = False
+user_name = "Superstar"
 
 def end_line():
     global line_index
@@ -81,7 +82,7 @@ def end_game():
     perc = scoring.get_result(lines, result_lines) * 100.0
     print_result(perc)
 
-    print_funsies()
+    km.print_funsies()
     
     time.sleep(25)
 
@@ -97,31 +98,7 @@ def init_song_timer(song_length):
     return timer
 
 
-def print_funsies():
-    print """
-    (._.)
-    <) )J
-     / \\
-    """
-    time.sleep(1)
-    print """
-    ( ._.)
-    \( (>
-     / \\
-    """
-    time.sleep(1)
-    print """
-    (._.)
-    <) )J
-     / \\
-    """
-    time.sleep(1)
-    print """
-    ( ._.)
-    \( (>
-     / \\
 
-    """
 
     
 
@@ -129,6 +106,9 @@ if __name__ == "__main__":
     #do = subprocess.Popen(['python2.7-32', 'play_sound.py start'])
     #print "\nWelcome to Morse Code Karaoke... GET READY!!!\n"
     km.print_welcome(2)
+
+    user_name = raw_input("Enter your name: ")
+
 
     pygame.mixer.music.play()
 
