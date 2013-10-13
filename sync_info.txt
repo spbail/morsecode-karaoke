@@ -1,6 +1,0 @@
-"big.mp3" sync hints.
-
-00:00 fade in starts 
-00:05 starting beep
-00:41 stopping beep/fade out starts
-01:10 end of track

@@ -83,4 +83,30 @@ result3
         print '''\
 result4
 '''
-    
+
+
+def print_funsies():
+    print """
+    (._.)
+    <) )J
+     / \\
+    """
+    time.sleep(1)
+    print """
+    ( ._.)
+    \( (>
+     / \\
+    """
+    time.sleep(1)
+    print """
+    (._.)
+    <) )J
+     / \\
+    """
+    time.sleep(1)
+    print """
+    ( ._.)
+    \( (>
+     / \\
+
+    """

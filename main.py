@@ -1,17 +1,18 @@
 import threading as thread
 import sys
 import timed_input as tin
-import sound_player as player
 import subprocess
 import pygame
 import scoring
 import times
 import lyricsfile_to_morse as mor
 import time
+import karaoke_messages as km
 
 current_line = ""
 lines = mor.first_word_to_morse('lyrics.txt')
 lines_times = times.get_times()
+lyrics = mor.get_lyrics()
 result_lines = []
 total_lines = len(lines)
 first_bleep = lines_times[0]
@@ -23,6 +24,7 @@ song_timer = thread.Timer(0, None)
 play_game = True
 lyrics_file = "lyrics.txt"
 play_line = False
+user_name = "Superstar"
 
 def end_line():
     global line_index
@@ -36,17 +38,18 @@ def play_line(line):
     global result_lines
     global lines_times
 
-    print "\n%d: %s"% (line_index+1, line)
+    print lyrics[line_index].rstrip('\n')
+    print ">>  %s"% (line)
     try: 
-        tin.input(">> ", get_line_time());
+        tin.input(">>  ", get_line_time());
         current_line = tin.get_line()
         #print "current line: ", current_line
+        print " "
         result_lines.append(current_line)
         end_line()
-    except EOFError:
-        cancel_game()
-
     except KeyboardInterrupt:
+        cancel_game()
+    except EOFError:
         cancel_game()
 
 
@@ -76,58 +79,40 @@ def start_game(song_length):
 
 def end_game():
     print "\nDone! Analysing game performance..."
-    perc = scoring.get_result(lines, result_lines)
+    perc = scoring.get_result(lines, result_lines) * 100.0
     print_result(perc)
 
-    print_funsies()
-    time.sleep(20)
+    km.print_funsies()
+    
+    time.sleep(25)
 
     cancel_game()
 
     return
 
 def print_result(perc):
-    print "Your result: %d per cent" % perc
+    print "Your result: %.1f%%" % perc
 
 def init_song_timer(song_length):
     timer = thread.Timer(song_length, end_game)
     return timer
 
 
-def print_funsies():
-    print """
-    (._.)
-    <) )J
-    / \\
-    """
-    time.sleep(1)
-    print """
-    ( ._.)
-    \( (>
-    / \\
-    """
-    time.sleep(1)
-    print """
-    (._.)
-    <) )J
-    / \\
-    """
-    time.sleep(1)
-    print """
-    ( ._.)
-    \( (>
-    / \\
 
-    """
+def run_mck():
+    km.print_welcome(2)
 
+    user_name = raw_input("Enter your name: ")
 
-
-if __name__ == "__main__":
-    #do = subprocess.Popen(['python2.7-32', 'play_sound.py start'])
-    print "\nWelcome to Morse Code Karaoke... GET READY!!!\n"
 
     pygame.mixer.music.play()
 
-    start_game(song_length)
+    start_game(song_length)   
+    
+
+if __name__ == "__main__":
+    #do = subprocess.Popen(['python2.7-32', 'play_sound.py start'])
+    #print "\nWelcome to Morse Code Karaoke... GET READY!!!\n"
+    run_mck()
     
 
