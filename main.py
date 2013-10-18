@@ -1,12 +1,14 @@
+# Python modules
 import threading as thread
 import sys
-import timed_input as tin
+import time
 import subprocess
 import pygame
+# game files
+import timed_input as tin
 import scoring
 import times
 import lyricsfile_to_morse as mor
-import time
 import karaoke_messages as km
 
 current_line = ""
@@ -82,7 +84,7 @@ def end_game():
     print "\n"
     perc = scoring.get_result(lines, result_lines) * 100.0
     #print_result(perc)
-    scoring.print_score(user_name, perc)
+    km.print_score(user_name, perc)
     km.print_funsies()
     
     time.sleep(25)

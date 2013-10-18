@@ -17,25 +17,34 @@ def print_welcome():
     time.sleep(4)
 
 
-def print_message(mess_type):
-    if mess_type == 'welcome':
-        print_welcome(2)
-    elif mess_type == 'result1':
-        print '''\
-result1
-'''
-    elif mess_type == 'result2':
-        print '''\
-result2
-'''
-    elif mess_type == 'result3':
-        print '''\
-result3
-'''
-    elif mess_type == 'result4':
-        print '''\
-result4
-'''
+def print_score(username, userscore):
+    from pyfiglet import figlet_format
+    import time
+    # big, doom, larry3d,starwars,slant, small,speed,mini, standard; script
+    print figlet_format('WELL DONE', font='straight')
+    print figlet_format('{0}!'.format(username), font='straight')
+    time.sleep(2)
+    print figlet_format('YOUR SCORE:', font='straight')
+    print figlet_format('{0} %!'.format(userscore), font='straight')
+    time.sleep(3)
+
+    
+def read_hiscore(filename):
+    with open(filename) as f:
+        content = f.readlines()    
+    username = content[0]
+    userscore = content[1]
+    return {'name': username, 'score': userscore}
+
+
+def print_scoreboard():
+    import os
+    file_hiscore = 'hiscore.txt'
+    if os.path.exists(file_hiscore):
+        hiscore = read_hiscore(file_hiscore)
+        
+    else:
+        open(filename, 'w').close() 
 
 
 def print_funsies():
@@ -64,26 +73,7 @@ def print_funsies():
      / \\
 
     """
-    time.sleep(1)
 
-    print """
-    (._.)
-    <) )J
-     / \\
-    """
-    time.sleep(1)
-    print """
-    ( ._.)
-    \( (>
-     / \\
-    """
-    time.sleep(1)
-
-    print """
-    (._.)
-    <) )J
-     / \\
-    """
 
 def print_welcome_old(iterations):
     import time
